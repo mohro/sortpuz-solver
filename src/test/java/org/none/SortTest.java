@@ -9,42 +9,37 @@ import static org.none.model.Color.RED;
 import org.junit.jupiter.api.Test;
 import org.none.logic.Sorter;
 import org.none.model.Tube;
+import org.none.model.Tubes;
 import org.none.utils.Fixtures;
 
 class SortTest {
 
 	@Test
 	void alreadySortedTubes() {
-		Tube[] tubes = new Tube[2];
-		tubes[0] = new Tube(RED, RED);
-		tubes[1] = new Tube(BLUE, BLUE);
+		Tubes tubes = new Tubes(Tube.of(RED, RED), Tube.of(BLUE, BLUE));
 
-		Sorter sorter = new Sorter(tubes);
-		Tube[] sorted = sorter.sort();
+		Sorter sorter = new Sorter(tubes, Fixtures.DEFAULT_CONFIGURATION);
+		Tubes sorted = sorter.sort();
 		assertTrue (Fixtures.isEmptyOrSorted(sorted));
 	}
 
 	@Test
 	void alreadySortedAndEmptyTubes() {
-		Tube[] tubes = new Tube[3];
-		tubes[0] = new Tube(RED, RED);
-		tubes[1] = new Tube(BLUE, BLUE);
-		tubes[2] = new Tube();
 
-		Sorter sorter = new Sorter(tubes);
-		Tube[] sorted = sorter.sort();
+		Tubes tubes = new Tubes(Tube.of(RED, RED), Tube.of(BLUE, BLUE), new Tube(2));
+
+
+		Sorter sorter = new Sorter(tubes, Fixtures.DEFAULT_CONFIGURATION);
+		Tubes sorted = sorter.sort();
 		assertTrue (Fixtures.isEmptyOrSorted(sorted));
 	}
 
 	@Test
 	void unSortedTubes() {
-		Tube[] tubes = new Tube[3];
-		tubes[0] = new Tube(BLUE, RED);
-		tubes[1] = new Tube(BLUE, RED);
-		tubes[2] = new Tube();
+		Tubes tubes = new Tubes(Tube.of(RED, BLUE), Tube.of(BLUE, RED), new Tube(2));
 
-		Sorter sorter = new Sorter(tubes);
-		Tube[] sorted = sorter.sort();
+		Sorter sorter = new Sorter(tubes, Fixtures.DEFAULT_CONFIGURATION);
+		Tubes sorted = sorter.sort();
 		assertTrue (Fixtures.isEmptyOrSorted(sorted));
 	}
 
