@@ -10,6 +10,13 @@ public class Sorter {
 		this.tubes = tubes;
 	}
 	public Tube[] sort() {
+		int length = tubes.length;
+		int counter = 0;
+		while(true) {
+			if (counter++ > 100) {
+				break;
+			}
+		}
 		return tubes;
 	}
 }
