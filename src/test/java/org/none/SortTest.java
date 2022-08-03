@@ -11,10 +11,10 @@ import org.none.logic.Sorter;
 import org.none.model.Tube;
 import org.none.utils.Fixtures;
 
-public class SortTest {
+class SortTest {
 
 	@Test
-	public void alreadySortedTubes() {
+	void alreadySortedTubes() {
 		Tube[] tubes = new Tube[2];
 		tubes[0] = new Tube(RED, RED);
 		tubes[1] = new Tube(BLUE, BLUE);
@@ -25,7 +25,7 @@ public class SortTest {
 	}
 
 	@Test
-	public void alreadySortedAndEmptyTubes() {
+	void alreadySortedAndEmptyTubes() {
 		Tube[] tubes = new Tube[3];
 		tubes[0] = new Tube(RED, RED);
 		tubes[1] = new Tube(BLUE, BLUE);
@@ -37,7 +37,7 @@ public class SortTest {
 	}
 
 	@Test
-	public void unSortedTubes() {
+	void unSortedTubes() {
 		Tube[] tubes = new Tube[3];
 		tubes[0] = new Tube(BLUE, RED);
 		tubes[1] = new Tube(BLUE, RED);

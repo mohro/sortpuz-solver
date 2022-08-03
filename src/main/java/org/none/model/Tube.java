@@ -16,4 +16,8 @@ public class Tube {
 		}
 		return true;
 	}
+
+	public boolean isFull() {
+		return false;
+	}
 }

@@ -8,10 +8,10 @@ import static org.none.model.Color.RED;
 
 import org.junit.jupiter.api.Test;
 
-public class TubeTest {
+class TubeTest {
 
 	@Test
-	public void testIsSorted() {
+	void testIsSorted() {
 		Tube tube = new Tube(RED, RED);
 		assertTrue(tube.isSameColor());
 
@@ -20,7 +20,7 @@ public class TubeTest {
 	}
 
 	@Test
-	public void testIsUnsorted() {
+	void testIsUnsorted() {
 		Tube tube = new Tube(RED, BLUE);
 		assertFalse(tube.isSameColor());
 
