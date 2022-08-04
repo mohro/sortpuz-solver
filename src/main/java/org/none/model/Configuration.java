@@ -10,6 +10,10 @@ public class Configuration {
 		this.randomSeed = this.randomSeed;
 	}
 
+	public Configuration iterations(int iterations) {
+		return new Configuration(iterations, this.randomSeed);
+	}
+
 	public int maxIterations() {
 		return maxIterations;
 	}

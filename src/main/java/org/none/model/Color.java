@@ -1,5 +1,5 @@
 package org.none.model;
 
 public enum Color {
-	RED, BLUE, NONE
+	RED, BLUE, GREEN, NONE
 }
