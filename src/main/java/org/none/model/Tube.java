@@ -83,9 +83,12 @@ public class Tube {
 
 	public void transfer(Tube tube) {
 		Color topColor = this.topColor();
-		int topIndex = topIndex();
-		colors[topIndex] = Color.NONE;
-		tube.add(tube.nextIndex(), topColor);
+		Color currentColor = this.topColor();
+		while(topColor.equals(currentColor) && tube.nextIndex() >= 0) {
+			int topIndex = topIndex();
+			colors[topIndex] = Color.NONE;
+			tube.add(tube.nextIndex(), topColor);
+		}
 	}
 
 	private void add(int index, Color color) {
@@ -96,5 +99,15 @@ public class Tube {
 		return "Tube{" +
 						"colors=" + Arrays.toString(colors) +
 						'}';
+	}
+
+	public boolean isEmpty() {
+		for(Color color : colors) {
+			if (color != Color.NONE) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 }

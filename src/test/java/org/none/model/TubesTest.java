@@ -48,4 +48,26 @@ class TubesTest {
 		assertFalse(tubes.isFull(1));
 	}
 
+	@Test
+	void transferToFull() {
+		Tubes tubes = new Tubes(
+			Tube.of(RED, RED),
+			Tube.of(2)
+		);
+		tubes.transfer(0, 1);
+		assertTrue(tubes.isEmpty(0));
+		assertTrue(tubes.isFull(1));
+	}
+
+	@Test
+	void transferToHalfFull() {
+		Tubes tubes = new Tubes(
+						Tube.of(RED, RED),
+						Tube.of(NONE, RED)
+		);
+		tubes.transfer(0, 1);
+		assertFalse(tubes.isEmpty(0));
+		assertFalse(tubes.isFull(0));
+		assertTrue(tubes.isFull(1));
+	}
 }

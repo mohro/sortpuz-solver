@@ -55,7 +55,7 @@ class SortTest {
 	void depth3Tubes() {
 		Tubes tubes = new Tubes(Tube.of(RED, BLUE, GREEN), Tube.of(GREEN, RED, BLUE), Tube.of(GREEN, BLUE, RED), new Tube(3));
 
-		Sorter sorter = new Sorter(tubes, Fixtures.DEFAULT_CONFIGURATION.iterations(300));
+		Sorter sorter = new Sorter(tubes, Fixtures.DEFAULT_CONFIGURATION.iterations(100));
 		Tubes sorted = sorter.sort();
 		assertTrue (Fixtures.isEmptyOrSorted(sorted));
 	}

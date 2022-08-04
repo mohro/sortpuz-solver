@@ -47,4 +47,8 @@ public class Tubes {
 	public void transfer(int source, int destination) {
 		tubes[source].transfer(tubes[destination]);
 	}
+
+	public boolean isEmpty(int i) {
+		return tubes[i].isEmpty();
+	}
 }
