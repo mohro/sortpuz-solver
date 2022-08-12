@@ -70,4 +70,15 @@ class TubesTest {
 		assertFalse(tubes.isFull(0));
 		assertTrue(tubes.isFull(1));
 	}
+
+	@Test
+	void transferPartial() {
+		Tubes tubes = new Tubes(
+						Tube.of(RED, RED, BLUE),
+						Tube.of(3)
+		);
+		tubes.transfer(0, 1);
+		assertEquals(tubes.top(0), 2);
+		assertEquals(tubes.top(1), 1);
+	}
 }

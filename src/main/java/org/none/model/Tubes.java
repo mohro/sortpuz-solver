@@ -36,6 +36,10 @@ public class Tubes {
 		return tubes.length;
 	}
 
+	public int top(int index) {
+		return tubes[index].topIndex();
+	}
+
 	public boolean isSameColor(int source) {
 		return tubes[source].isSameColor();
 	}
@@ -48,7 +52,7 @@ public class Tubes {
 		tubes[source].transfer(tubes[destination]);
 	}
 
-	public boolean isEmpty(int i) {
-		return tubes[i].isEmpty();
+	public boolean isEmpty(int index) {
+		return tubes[index].isEmpty();
 	}
 }
