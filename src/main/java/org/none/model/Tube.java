@@ -82,12 +82,14 @@ public class Tube {
 	}
 
 	public void transfer(Tube tube) {
-		Color topColor = this.topColor();
 		Color currentColor = this.topColor();
+		Color topColor = tube.topColor();
+		topColor = Color.NONE.equals(topColor) ? currentColor : topColor;
 		while(topColor.equals(currentColor) && tube.nextIndex() >= 0) {
 			int topIndex = topIndex();
 			colors[topIndex] = Color.NONE;
 			tube.add(tube.nextIndex(), topColor);
+			currentColor = this.topColor();
 		}
 	}
 

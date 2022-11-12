@@ -38,6 +38,17 @@ class TubesTest {
 	}
 
 	@Test
+	void doNotTransferBlueTest() {
+		Tubes tubes = new Tubes(
+						Tube.of(BLUE, RED),
+						Tube.of(NONE, RED)
+		);
+		tubes.transfer(0, 1);
+		assertTrue(tubes.isFull(0));
+		assertFalse(tubes.isFull(1));
+	}
+
+	@Test
 	void transferToEmptyTube() {
 		Tubes tubes = new Tubes(
 						Tube.of(RED, BLUE),
