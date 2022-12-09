@@ -77,8 +77,7 @@ class TubesTest {
 						Tube.of(NONE, RED)
 		);
 		tubes.transfer(0, 1);
-		assertFalse(tubes.isEmpty(0));
-		assertFalse(tubes.isFull(0));
+		assertTrue(tubes.isPartial(0));
 		assertTrue(tubes.isFull(1));
 	}
 

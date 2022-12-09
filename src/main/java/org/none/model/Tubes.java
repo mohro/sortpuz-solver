@@ -22,6 +22,10 @@ public class Tubes {
 		return tubes[index].isFull();
 	}
 
+	public boolean isPartial(int index) {
+		return !tubes[index].isFull() && !tubes[index].isEmpty();
+	}
+
 	private void checkDepth(Tube[] tubes, int depth) {
 		for (Tube tube : tubes) {
 			if (tube.size() == depth){
