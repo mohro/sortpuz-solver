@@ -2,13 +2,15 @@ package org.none.logic;
 
 
 import java.util.Random;
-import java.util.logging.Logger;
+
 import org.none.model.Configuration;
 import org.none.model.Tubes;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Sorter {
 
-	Logger logger = Logger.getLogger("Sorter");
+	Logger logger = LoggerFactory.getLogger(Sorter.class);
 
 	private final Tubes tubes;
 	private Configuration configuration;
