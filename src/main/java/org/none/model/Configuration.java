@@ -7,7 +7,7 @@ public class Configuration {
 
 	public Configuration(int maxIterations, long randomSeed) {
 		this.maxIterations = maxIterations;
-		this.randomSeed = this.randomSeed;
+		this.randomSeed = randomSeed;
 	}
 
 	public Configuration iterations(int iterations) {
