@@ -91,4 +91,14 @@ class TubesTest {
 		assertEquals(tubes.top(0), 2);
 		assertEquals(tubes.top(1), 1);
 	}
+
+	@Test
+	void tubesDepth() {
+		Tubes tubes = new Tubes(
+				Tube.of(RED, RED, BLUE),
+				Tube.of(3)
+		);
+
+		assertEquals(tubes.depth(), 3);
+	}
 }

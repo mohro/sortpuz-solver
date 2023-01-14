@@ -112,4 +112,8 @@ public class Tube {
 
 		return true;
 	}
+
+	public Color colorAt(int i) {
+		return colors[i];
+	}
 }

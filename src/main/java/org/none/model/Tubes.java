@@ -59,4 +59,34 @@ public class Tubes {
 	public boolean isEmpty(int index) {
 		return tubes[index].isEmpty();
 	}
+
+	private String formatString(int size) {
+		String format = "";
+		for (int i = 0; i < size; i++) {
+			format += " %10s |";
+		}
+
+		return format;
+	}
+
+	public String toString() {
+		int depth = depth();
+		int size = size();
+		String format = formatString(size);
+
+		StringBuilder sb = new StringBuilder("\n");
+		for (int i = 0; i < depth; i++) {
+			Object[] colors = new Color[size];
+			for (int j = 0; j < size; j++) {
+				colors[j] = tubes[j].colorAt(i);
+			}
+			sb.append(String.format(format, colors)).append("\n");
+
+		}
+		return sb.toString();
+	}
+
+	public int depth() {
+		return tubes[0].size();
+	}
 }

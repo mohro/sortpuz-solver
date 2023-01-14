@@ -1,6 +1,8 @@
 package org.none.utils;
 
+import org.none.model.Color;
 import org.none.model.Configuration;
+import org.none.model.Tube;
 import org.none.model.Tubes;
 
 public class Fixtures {
@@ -15,5 +17,9 @@ public class Fixtures {
 			return false;
 		}
 		return true;
+	}
+
+	public static Tube tube(Color ... colors) {
+		return new Tube(colors);
 	}
 }

@@ -8,6 +8,8 @@ import org.none.model.Tubes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+//TODO:
+//	1. Inefficient sorting algorithm.
 public class Sorter {
 
 	Logger logger = LoggerFactory.getLogger(Sorter.class);
@@ -31,7 +33,7 @@ public class Sorter {
 			}
 			int source = random.nextInt(length);
 			int destination = random.nextInt(length);
-			logger.info(source +" :: " + destination);
+
 			if (source == destination) {
 				continue;
 			}
@@ -44,7 +46,6 @@ public class Sorter {
 			if(tubes.isNotCompatible(source, destination)) {
 				continue;
 			}
-
 			tubes.transfer(source, destination);
 		}
 		return tubes;
