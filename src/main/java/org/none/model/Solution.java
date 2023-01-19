@@ -1,5 +1,6 @@
 package org.none.model;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,6 +9,10 @@ public class Solution {
 
     public Solution(List<Step> steps) {
         this.steps = steps;
+    }
+
+    public Solution() {
+        this(Collections.emptyList());
     }
 
     public List<Step> steps() {

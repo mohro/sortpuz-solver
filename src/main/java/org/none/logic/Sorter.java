@@ -4,6 +4,7 @@ package org.none.logic;
 import java.util.Random;
 
 import org.none.model.Configuration;
+import org.none.model.Solution;
 import org.none.model.Tubes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,11 +18,13 @@ public class Sorter {
 	private final Tubes tubes;
 	private Configuration configuration;
 	private Random random;
+	private Solution solution;
 
 	public Sorter(Tubes tubes, Configuration defaultConfiguration) {
 		this.tubes = tubes;
 		this.configuration = defaultConfiguration;
 		this.random = new Random(configuration.randomSeed());
+		solution = new Solution();
 	}
 
 	public Tubes sort() {
@@ -49,5 +52,9 @@ public class Sorter {
 			tubes.transfer(source, destination);
 		}
 		return tubes;
+	}
+
+	public Solution solution() {
+		return solution;
 	}
 }
