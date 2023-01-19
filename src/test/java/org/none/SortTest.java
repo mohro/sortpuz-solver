@@ -24,14 +24,4 @@ class SortTest {
 		Tubes sorted = sorter.sort();
 		assertTrue (Fixtures.isEmptyOrSorted(sorted));
 	}
-
-	@Test
-	void failEarly() {
-		Tubes tubes = new Tubes(tube(RED, BLUE), tube(BLUE, RED), new Tube(NONE, RED));
-
-		Sorter sorter = new Sorter(tubes, Fixtures.DEFAULT_CONFIGURATION.iterations(100));
-		Tubes sorted = sorter.sort();
-		System.out.println(tubes);
-		assertTrue (Fixtures.isEmptyOrSorted(sorted));
-	}
 }

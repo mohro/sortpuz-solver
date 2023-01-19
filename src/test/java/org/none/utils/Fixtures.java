@@ -22,4 +22,12 @@ public class Fixtures {
 	public static Tube tube(Color ... colors) {
 		return new Tube(colors);
 	}
+
+	public static Tube tube(int depth) {
+		return new Tube(depth);
+	}
+
+	public static Tubes tubes(Tube ...tubes) {
+		return new Tubes(tubes);
+	}
 }
