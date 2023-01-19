@@ -13,8 +13,8 @@ public class SolutionTest {
     void testEquality() {
         List<Step> steps = Arrays.asList(new Step(0, 1));
         Solution s1 = new Solution(steps);
+        Solution s2 = new Solution(steps);
 
-        assertEquals(steps, s1.steps());
-
+        assertEquals(s1, s2);
     }
 }
