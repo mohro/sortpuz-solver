@@ -49,6 +49,7 @@ public class Sorter {
 			if(tubes.isNotCompatible(source, destination)) {
 				continue;
 			}
+			solution.nextStep(source, destination);
 			tubes.transfer(source, destination);
 		}
 		return tubes;

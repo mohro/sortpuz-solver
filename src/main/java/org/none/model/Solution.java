@@ -1,5 +1,6 @@
 package org.none.model;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +13,7 @@ public class Solution {
     }
 
     public Solution() {
-        this(Collections.emptyList());
+        steps = new ArrayList<>();
     }
 
     public List<Step> steps() {
@@ -30,5 +31,9 @@ public class Solution {
     @Override
     public int hashCode() {
         return Objects.hash(steps);
+    }
+
+    public void nextStep(int source, int destination) {
+        steps.add(new Step(source, destination));
     }
 }
